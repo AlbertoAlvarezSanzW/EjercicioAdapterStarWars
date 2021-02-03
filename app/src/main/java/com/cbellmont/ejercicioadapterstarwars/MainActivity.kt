@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
             downloadNewFilm()
         }
 
-        binding.bTodas.setOnClickListener {
+        binding.bMalas.setOnClickListener {
             binding.pbLoading.visibility = View.VISIBLE
-            downloadAll()
+            downloadNewFilmsMalas()
         }
     }
 
@@ -72,6 +72,21 @@ class MainActivity : AppCompatActivity() {
             return@withContext model.getNewFilms()
         }
     }
+
+    private fun downloadNewFilmsMalas(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val list = loadNewFilmsMalas()
+            setAdapterOnMainThread(list)
+        }
+    }
+
+    private suspend fun loadNewFilmsMalas() : MutableList<Film>{
+        // El withContext(Dispatchers.IO) no es estrictamente necesario. Lo ponemos solo por seguridad.
+        return withContext(Dispatchers.IO) {
+            return@withContext model.getNewFilmsMalas()
+        }
+    }
+
 
     private fun downloadAll(){
         CoroutineScope(Dispatchers.IO).launch {

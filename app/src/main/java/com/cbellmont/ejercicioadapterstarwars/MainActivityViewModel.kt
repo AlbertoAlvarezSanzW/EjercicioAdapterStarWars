@@ -11,12 +11,15 @@ import kotlinx.coroutines.withContext
 class MainActivityViewModel  : ViewModel() {
 
     private val films = mutableListOf(
-        Film(1, "La Amenaza Fantasma", "aaaa"),
-        Film(2, "El Ataque de los Clones", "aaaa"),
-        Film(3, "La Venganza de los Sith", "aaaa"),
-        Film(4, "Una Nueva Esperanza", "aaaa"),
-        Film(5, "El Imperio Contraataca", "aaaa"),
-        Film(6, "El Retorno del Jedi", "aaaa")
+        Film(1, "La Amenaza Fantasma", "1999"),
+        Film(2, "El Ataque de los Clones", "2002"),
+        Film(3, "La Venganza de los Sith", "2005"),
+        Film(4, "Una Nueva Esperanza", "1977"),
+        Film(5, "El Imperio Contraataca", "1980"),
+        Film(6, "El Retorno del Jedi", "1983"),
+        Film(7, "El Despertar de la fuerza", "2015"),
+        Film(8, "Los últimos Jedi", "2017"),
+        Film(9, "El ascenso de Skywalker", "2019")
     )
 
     suspend fun getFilms(): MutableList<Film> {
@@ -33,5 +36,10 @@ class MainActivityViewModel  : ViewModel() {
     suspend fun getNewFilms() : MutableList<Film> {
         delay(2000)
         return films.subList(0,3)
+    }
+
+    suspend fun getNewFilmsMalas() : MutableList<Film> {
+        delay(2000)
+        return films.subList(6,9)
     }
 }

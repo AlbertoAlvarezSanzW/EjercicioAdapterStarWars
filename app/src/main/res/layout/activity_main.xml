@@ -32,27 +32,26 @@
 
     <Button
         android:id="@+id/bAntiguas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="153dp"
+        android:layout_height="54dp"
         android:text="Mostrar Antiguas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bTodas"
+        android:id="@+id/bMalas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Mostrar Todas"
+        android:text="Mostrar Malas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bNuevas"
         app:layout_constraintStart_toEndOf="@+id/bAntiguas" />
 
     <Button
         android:id="@+id/bNuevas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="54dp"
         android:text="Mostrar Nuevas"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
