@@ -28,14 +28,14 @@ class MainActivityViewModel  : ViewModel() {
     }
 
 
-    suspend fun getOldFilms() : MutableList<Film> {
-        delay(2000)
-        return films.subList(3,6)
-    }
-
     suspend fun getNewFilms() : MutableList<Film> {
         delay(2000)
         return films.subList(0,3)
+    }
+
+    suspend fun getOldFilms() : MutableList<Film> {
+        delay(2000)
+        return films.subList(3,6)
     }
 
     suspend fun getNewFilmsMalas() : MutableList<Film> {
