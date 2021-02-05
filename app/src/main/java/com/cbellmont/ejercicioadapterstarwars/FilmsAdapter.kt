@@ -34,18 +34,14 @@ class FilmsAdapter : RecyclerView.Adapter<FilmsAdapter.FilmsViewHolder>() {
     override fun onBindViewHolder(holder: FilmsViewHolder, position: Int) {
         holder.tvIntro.text = films[position].intro
         holder.tvNombre.text = films[position].name
-        if (position % 9 > 3){
+        if (position % 6 > 3){
             holder.ivIzquierda.visibility = View.GONE
             holder.ivDerecha.visibility = View.VISIBLE
             Picasso.get().load(films[position].getUrlImage()).into(holder.ivDerecha)
-        }  else if (position % 9 > 2) {
+        }  else {
             holder.ivIzquierda.visibility = View.VISIBLE
             holder.ivDerecha.visibility = View.GONE
             Picasso.get().load(films[position].getUrlImage()).into(holder.ivIzquierda)
-        }else{
-            holder.ivIzquierda.visibility = View.GONE
-            holder.ivDerecha.visibility = View.VISIBLE
-            Picasso.get().load(films[position].getUrlImage()).into(holder.ivDerecha)
         }
     }
 }
